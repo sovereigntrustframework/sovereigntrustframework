@@ -1,17 +1,27 @@
-# Welcome to MkDocs
+# Sovereign Trust Framework (STF)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+### “SSI defines the actors. ToIP defines the digital trust stack. STF orchestrates the interactions where trust actually emerges.”
 
-## Commands
+---
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## What is STF?
+The **Sovereign Trust Framework** is a **standardization & interoperability framework** for ToIP.  
+It builds on:
 
-## Project layout
+- **Self-Sovereign Identity (SSI)** 
+- **Trust over IP (ToIP)** 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+STF adds the missing layer:  
+**structured interactions and trust logic** that allow these actors to exchange, evaluate, and prove trust without relying on central authorities.
+
+---
+
+## Project Status
+Early draft. Evolving. Contributions welcome.
+
+---
+
+## Author & License
+Author: **[Alexandre Cardoso](www.cardosoalexandre.com)** 
+
+License: **Apache 2.0**

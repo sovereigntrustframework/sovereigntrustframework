@@ -49,14 +49,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Overview: overview.md
-  - Specification:
-      - Introduction: spec/introduction.md
-      - Architecture: spec/architecture.md
-      - Trust Model: spec/trust-model.md
-  - Use Cases: use-cases.md
-  - Contributing: contributing.md
-  - About: about.md
 
 extra:
   social:
