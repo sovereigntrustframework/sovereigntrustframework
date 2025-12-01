@@ -1,0 +1,52 @@
+name: Deploy Staging Site
+
+on:
+  push:
+    branches:
+      - develop-site
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout develop-site
+        uses: actions/checkout@v4
+        with:
+          ref: develop-site
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs
+
+      - name: Build staging site
+        run: mkdocs build --site-dir site
+
+      - name: Deploy to gh-pages/staging
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch origin gh-pages
+          git checkout gh-pages
+          
+          # Remove staging antigo
+          rm -rf staging
+          
+          # Copia novo build
+          mkdir -p staging
+          cp -r site/* staging/
+          
+          git add staging
+          git commit -m "Deploy staging from develop-site @ $(date)"
+          git push origin gh-pages
+
+
