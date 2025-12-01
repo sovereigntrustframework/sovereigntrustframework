@@ -3,6 +3,7 @@ site_url: https://sovereigntrustframework.org
 site_description: A framework for decentralized trust and self-sovereign identity
 site_author: Alexandre Cardoso (wwww.cardosoalexandre.com)
 
+
 repo_url: https://github.com/cardosoalexandrecom/sovereigntrustframework
 repo_name: cardosoalexandrecom/sovereigntrustframework
 
@@ -45,7 +46,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - toc:
-      permalink: true
+      permalink: true  
 
 nav:
   - Home: index.md
@@ -56,3 +57,4 @@ extra:
       link: https://github.com/cardosoalexandrecom
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/alexandrecardoso
+  generator: false  # Remove "Made with Material for MkDocs"
