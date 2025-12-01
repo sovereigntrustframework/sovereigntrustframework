@@ -1,99 +1,53 @@
 # Sovereign Trust Framework (STF)
 
-## What is the Sovereign Trust Framework?
+**Orchestrating Trust Over IP (ToIP) Components for Self-Sovereign Identity (SSI)**
 
-The Sovereign Trust Framework (STF) is a modern, generic architecture for building trust on the Internet. It combines the strengths of self-sovereign identity (SSI), the Trust Over IP (ToIP) layered trust model, and policy-driven, privacy-preserving credential exchange.
+## Introduction to the Sovereign Trust Framework (STF)
 
-STF empowers individuals, organizations, or devices to control their identity, credentials, and trust relationships while enabling interoperable, verifiable interactions across systems, platforms, and jurisdictions.
+The Sovereign Trust Framework (STF) is an innovative orchestration layer designed to enhance Self-Sovereign Identity (SSI) systems by integrating and extending components from the Trust Over IP (ToIP) Foundation's stack [[1]](/references/#ref1). STF focuses on policy-driven trust management, enabling secure, privacy-preserving interactions in decentralized ecosystems. It contributes to ToIP by providing modular tools for credential orchestration, trust negotiation, and governance interoperability, without competing with existing standards.
 
-At its core, STF is designed for a world where digital interactions must respect sovereignty, privacy, consent, and minimal disclosure, while still supporting verifiable credentials, governance, compliance, or reputation where needed.
-
----
+STF addresses gaps in decentralized trust, such as privacy-preserving feedback and attack resilience, building on protocols like DidTrust [[2]](/references/#ref2). This framework empowers users to control their identifiers, verifiable credentials (VCs), and trust relationships through minimal disclosure and explicit consent.
 
 ## High-Level Vision
 
-### SSI + ToIP + Policy-Driven Trust
+STF orchestrates ToIP's four-layer model (public utilities, peer-to-peer communication, credential exchange, and ecosystems) with policy-driven enhancements [[1]](/references/#ref1). It integrates Decentralized Identifiers (DIDs), VCs, and trust registries to facilitate dynamic trust negotiation, as seen in real-world SSI applications discussed at the Internet Identity Workshop (IIW) [[3]](/references/#ref3).
 
-**SSI** gives individuals control over identifiers and credentials without relying on centralized identity providers.
-
-**ToIP** defines layers for cryptographic trust, messaging, governance, and credential ecosystems, enabling global interoperability.
-
-**Policy-driven trust** allows participants to negotiate the rules that govern credential exchange, selective disclosure, and authorization. Policies define what evidence is required and how it must be interpreted.
-
-By combining these three dimensions, STF aims to provide a universal trust framework: privacy-preserving, verifiable, interoperable, and adaptable to diverse governance and compliance requirements.
-
----
+![STF Architecture Diagram](assets/stf-architecture.png)  
+*(Placeholder for a layered stack diagram showing STF atop ToIP components. Create using tools like Draw.io and place in the 'assets' folder.)*
 
 ## Key Principles
 
-- **Governance-agnostic**  
-  STF does not impose a specific governance framework. It supports informal peer networks, institutional trust models, and regulatory systems.
-
-- **Transport-agnostic**  
-  STF abstracts communication layers. It can operate over HTTP, WebSockets, DIDComm, TSP, peer-to-peer, or custom transports.
-
-- **Policy-schema-agnostic**  
-  STF is not tied to a specific credential schema. Any verifiable claim structure can be used as long as it is canonicalized and interpretable by policies.
-
-- **Privacy-preserving by default**  
-  Users hold their own credentials. Interactions follow minimal disclosure, selective sharing, and unlinkability principles.
-
-- **Composable and modular**  
-  STF is not a monolithic stack. Developers can use identity components, transport abstraction, messaging, policy flows, reputation modules, or governance modules independently.
-
-- **Interoperable and open**  
-  Built on open standards such as DIDs, VCs, and the ToIP stack, STF is designed for cross-platform and cross-domain compatibility.
-
----
+| Principle                  | Description |
+|----------------------------|-------------|
+| Governance-Agnostic       | Supports any governance model without imposing one, aligning with ToIP's flexibility [[1]](/references/#ref1). |
+| Transport-Agnostic        | Works across protocols like DIDComm or HTTP, ensuring broad interoperability. |
+| Policy-Schema-Agnostic    | Accommodates diverse policy formats (e.g., Rego, JSON schemas) for trust rules. |
+| Privacy-Preserving by Default | Incorporates zero-knowledge proofs and minimal disclosure, inspired by DidTrust's SMPC framework [[2]](/references/#ref2). |
+| Composable and Modular    | Builds on open standards for easy integration. |
+| Interoperable and Open    | Relies on W3C DIDs and VCs for global compatibility. |
 
 ## Why STF Matters
 
-Digital ecosystems increasingly rely on trustworthy data exchange: identity verification, credentials, authorization, compliance, attestations, and reputation.
+In digital ecosystems, trustworthy data exchange is critical, yet centralized identities risk single points of failure [[2]](/references/#ref2). SSI and ToIP address this but lack robust policy orchestration for trust attacks (e.g., Sybil or bad-mouthing) [[2]](/references/#ref2). STF fills this gap by enabling resilient, privacy-focused trust management, as highlighted in discussions on decentralized trust graphs at IIW [[3]](/references/#ref3).
 
-Centralized identity models cannot meet modern privacy, sovereignty, or interoperability requirements.
+## Applications
 
-SSI alone does not solve governance, trust, or policy orchestration.
+- **Secure Messaging**: Policy-enforced encryption for SSI-based communication.
+- **Regulatory Compliance**: Automated KYC/AML via verifiable credentials, as explored in IIW sessions on SEDI [[3]](/references/#ref3).
+- **Reputation Systems**: Trust scoring in DAOs, resistant to manipulation [[2]](/references/#ref2).
+- **Citizen Services and IoT**: Decentralized access control for public services and devices.
 
-ToIP offers layering but does not define a unified framework for policy-centric trust.
+## Resources
 
-STF fills this gap by combining decentralization, governance, and policy logic into a single architecture. It is suitable for applications such as:
+- **Getting Started**: Tutorials on DIDs, VCs, and policies.
+- **[Architecture](architecture.md)**: Detailed layers and protocols.
+- **Use Cases**: Diagrams and examples.
+- **FAQ/Glossary**: Key terms defined.
 
-- secure messaging and contact exchange  
-- financial and regulatory compliance  
-- reputation-based access  
-- cross-platform identity  
-- privacy-preserving KYC/AML  
-- decentralized communities and DAOs  
-- citizen services  
-- IoT and machine identities  
-
----
-
-## Start Building
-
-This site includes:
-
-- **Getting Started**  
-  How to create DIDs, issue credentials, verify proofs, and enforce policies with STF’s policy flow.
-
-- **Architecture**  
-  Layered structure of STF, transport abstraction, messaging, policy canonicalization, canonical identity model, and VSTP (policy flow protocol).
-
-- **Protocols**  
-  Policy flow protocol, STF transport concepts, and integration with existing protocols such as DIDComm or TSP.
-
-- **Use Cases**  
-  Simple scenarios such as chat, contact sharing, and age verification, with clear diagrams and message flows.
-
-- **Examples**  
-  Rego policy examples, STF-L2 transport snippets, and DIDComm integrations.
-
-- **FAQ and Glossary**  
-  Definitions of core concepts: DID, VP, cDID, policy canonicalization, STF-L2, VSTP, etc.
-
----
+Explore the full documentation in the navigation menu.
 
 ## Join the STF Community
+
 
 STF is an open framework. Contributions, feedback, and proposals from developers, researchers, organizations, and ecosystem partners are welcome.
 
